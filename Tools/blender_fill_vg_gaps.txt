@@ -1,0 +1,28 @@
+# Author: SilentNightSound#7430
+# Fills in missing vertex groups for a model so there are no gaps, and sorts to make sure everything is in order
+# Works on the currently selected object
+# e.g. if the selected model has groups 0 1 4 5 7 2 it adds an empty group for 3 and 6 and sorts to make it 0 1 2 3 4 5 6 7
+# Very useful to make sure there are no gaps or out-of-order vertex groups
+
+import bpy
+
+# Can change this to another number in order to generate missing groups up to that number
+# e.g. setting this to 130 will create 0,1,2...130 even if the active selected object only has 90
+# Otherwise, it will use the largest found group number and generate everything up to that number
+largest = 0
+
+ob = bpy.context.active_object
+ob.update_from_editmode()
+
+for vg in ob.vertex_groups:
+    try:
+        if int(vg.name.split(".")[0])>largest:
+            largest = int(vg.name.split(".")[0])
+    except ValueError:
+        print("Vertex group not named as integer, skipping")
+
+missing = set([f"{i}" for i in range(largest+1)]) - set([x.name.split(".")[0] for x in ob.vertex_groups])
+for number in missing:
+    ob.vertex_groups.new(name=f"{number}")
+
+bpy.ops.object.vertex_group_sort()
