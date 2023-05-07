@@ -41,7 +41,7 @@ NOTE! If using the GIMI plugin, please uninstall that version and use the SRMI p
 
 1. Download and install Blender
 
-2. Download and install the modified 3DMigoto plugin (blender_3dmigoto_srmi.py) from [releases](https://github.com/SilentNightSound/GI-Model-Importer/releases). You can install an add-on in Blender by going to Edit -> Preferences -> Add-Ons -> Install, then selecting the .py file. 
+2. Download and install the modified 3DMigoto plugin (blender_3dmigoto_srmi.py) from [releases](https://github.com/SilentNightSound/SR-Model-Importer/releases). You can install an add-on in Blender by going to Edit -> Preferences -> Add-Ons -> Install, then selecting the .py file. 
 
 3. If done correctly, you should see 3dmigoto in the plugin list as well as new options in the import and export menus
 
