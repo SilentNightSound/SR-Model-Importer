@@ -1,4 +1,4 @@
-EN | [中文](CN_README.md)
+EN
 
 # Star-Rail-Model-Importer (SRMI)
 Tools and instructions for importing custom models into Honkai Star Rail.
@@ -21,11 +21,7 @@ Model files for the importer are located at [SR-Model-Importer-Assets](https://g
    - "3dmigoto-SRMI-for-development.zip" is a development version intended for creating mods which has all features turned on (including the green text at the top and bottom of the screen) but is slower
    - "3dmigoto-SRMI-for-playing-mods.zip" is a version of the program indended for playing mods which has development features turned off (no green text) but is faster
 
-2. For loading the plugin, it depends if you are on Windows 10 or Windows 11.
-
-For Windows 11, the process of loading 3dmigoto is the same as GIMI - find the target = line in the d3dx.ini and set it to StarRail.exe (`target = StarRail.exe`). Then, run the W11Loader.exe as admin.
-
-For Windows 10, you will need to use the modified loader as admin. I have provided an exe called W10Loader.exe compiled from python, but it tends to trigger Windows Defender (since Windows Defender really, really doesn't like exe compiled from python). You can either add it as an exception or run the python script (W10Loader.py, but you need to install the dependencies as well)
+2. For loading 3dmigoto, run  `3DMigotoLoader.exe` as admin. Note that the exe has been compiled from python so Windows Defender might flag it - if you are having issues running the exe because it is being blocked, I have also provided `3DMigotoLoader.py` which has the same code (you will need to install the psutil and pyinjector dependencies to run it)
 
 3. If everything is correct so far, 3DMigoto should be injected into the game and you should see a green text overlay (only if using the "for development" version, the "for playing" version does not show the green text):
 
@@ -48,13 +44,6 @@ NOTE! If using the GIMI plugin, please uninstall that version and use the SRMI p
 <img src="https://user-images.githubusercontent.com/107697535/174328624-ccb14ded-57b2-4ac7-b0a0-0de118119174.png" width="800"/>
 
 <img src="https://user-images.githubusercontent.com/107697535/174329025-981a1a9f-7c56-4f44-804b-1b0394b8bd33.png" width="800"/>
-
-&nbsp;
-## Usage Instructions
-
-See [Usage Instructions](Guides/UsageInstructions.md)
-
-Also, if you any questions about modding come join the Star Rail modding discord at https://discord.gg/agmg. The only verification is that you can 3dmigoto SRMI working by following the steps above.
 
 &nbsp;
 ## Acknowledgements
