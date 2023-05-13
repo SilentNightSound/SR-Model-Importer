@@ -1,6 +1,6 @@
 # Troubleshooting 
 
-A list of common issues and frequently asked questions for the GIMI tools.
+A list of common issues and frequently asked questions for the SRMI tools.
 
 #### Before attempting anything on this page, make sure you are using the most up-to-date versions of the plugins, character data, and programs. Most issues I see are from people using older versions of the tools.
 
@@ -12,7 +12,7 @@ Three most common issues are:
 
 - Double check you have the correct Genshin game .exe location in the d3dx.ini file. Genshin has two .exe, one for the launcher and one for the game itself - you want the latter
 - If the green text is not showing up, make sure you are using the Development version. The for-playing version does not have green text 
-- Make sure you are running both the GIMI loader and Genshin as administrator
+- Make sure you are running both the SRMI loader and Genshin as administrator
 
 There is no problem if the 3dmigoto loader console window closes after the game loads, that is the intended behavior.
 
