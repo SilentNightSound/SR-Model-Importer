@@ -1,4 +1,4 @@
-EN
+EN | [中文](CN_README.md)
 
 # Star-Rail-Model-Importer (SRMI)
 Tools and instructions for importing custom models into Honkai Star Rail.
