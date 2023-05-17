@@ -19,7 +19,7 @@ Model files for the importer are located at [SR-Model-Importer-Assets](https://g
 
 1. Download a 3dmigoto .zip and extract it. I have provided two versions:
    - "3dmigoto-SRMI-for-development.zip" is a development version intended for creating mods which has all features turned on (including the green text at the top and bottom of the screen) but is slower
-   - "3dmigoto-SRMI-for-playing-mods.zip" is a version of the program indended for playing mods which has development features turned off (no green text) but is faster
+   - "3dmigoto-SRMI-for-playing-mods.zip" is a version of the program intended for playing mods which has development features turned off (no green text) but is faster
 
 2. For loading 3dmigoto, run  `3DMigotoLoader.exe` as admin. Note that the exe has been compiled from python so Windows Defender might flag it - if you are having issues running the exe because it is being blocked, I have also provided `3DMigotoLoader.py` which has the same code (you will need to install the psutil and pyinjector dependencies to run it)
 
