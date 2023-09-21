@@ -14,7 +14,7 @@
 # addon supports both Blender 2.79 and 2.80. It will still work on 2.79, just
 # with a warning.
 bl_info = {
-    "name": "3DMigoto",
+    "name": "3DMigoto-SRMI",
     "blender": (2, 80, 0),
     "author": "Ian Munsie (darkstarsword@gmail.com), SilentNightSound#7430",
     "location": "File > Import-Export",
@@ -2918,7 +2918,7 @@ class DeleteNonNumericVertexGroups(bpy.types.Operator):
         return {'FINISHED'}
 
 def menu_func_import_fa(self, context):
-    self.layout.operator(Import3DMigotoFrameAnalysis.bl_idname, text="3DMigoto frame analysis dump (vb.txt + ib.txt)")
+    self.layout.operator(Import3DMigotoFrameAnalysis.bl_idname, text="3DM-SR/GI frame analysis dump (vb.txt + ib.txt)")
 
 def menu_func_import_raw(self, context):
     self.layout.operator(Import3DMigotoRaw.bl_idname, text="3DMigoto raw buffers (.vb + .ib)")
