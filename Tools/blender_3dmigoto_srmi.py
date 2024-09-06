@@ -1801,7 +1801,7 @@ def generate_mod_folder(path, character_name, no_ramps, delete_intermediate, cre
                     ib_override_ini += f"[TextureOverride{current_name}{current_object}{texture[0]}]\nhash = {texture[2]}\n"
                     shutil.copy(os.path.join(path, f"{current_name}{current_object}{texture[0]}{texture[1]}"),
                                 os.path.join(parent_folder, f"{character_name}Mod", f"{current_name}{current_object}{texture[0]}{texture[1]}"))
-                    ib_override_ini += f"ps-t{j} = Resource{current_name}{current_object}{texture[0]}\n"
+                    ib_override_ini += f"this = Resource{current_name}{current_object}{texture[0]}\n"
                     tex_res_ini += f"[Resource{current_name}{current_object}{texture[0]}]\nfilename = {current_name}{current_object}{texture[0]}{texture[1]}\n\n"
                 else:
                     for j, texture in enumerate(texture_hashes):
@@ -1809,7 +1809,11 @@ def generate_mod_folder(path, character_name, no_ramps, delete_intermediate, cre
                             continue
                         shutil.copy(os.path.join(path, f"{current_name}{current_object}{texture[0]}{texture[1]}"),
                                     os.path.join(parent_folder, f"{character_name}Mod",f"{current_name}{current_object}{texture[0]}{texture[1]}"))
-                        ib_override_ini += f"ps-t{j} = Resource{current_name}{current_object}{texture[0]}\n"
+                        # Unlike genshin, star rail only has one texture per part so overriding on texture hash gives much better results
+                        if star_rail:
+                            ib_override_ini += f"\n[TextureOverride{current_name}{current_object}{texture[0]}]\nhash = {texture[2]}\nthis = Resource{current_name}{current_object}{texture[0]}\n"
+                        else:
+                            ib_override_ini += f"ps-t{j} = Resource{current_name}{current_object}{texture[0]}\n"
                         tex_res_ini += f"[Resource{current_name}{current_object}{texture[0]}]\nfilename = {current_name}{current_object}{texture[0]}{texture[1]}\n\n"
                 ib_override_ini += "\n"
 
@@ -1872,7 +1876,7 @@ def generate_mod_folder(path, character_name, no_ramps, delete_intermediate, cre
                     ib_override_ini += f"[TextureOverride{current_name}{current_object}{texture[0]}]\nhash = {texture[2]}\n"
                     shutil.copy(os.path.join(path, f"{current_name}{current_object}{texture[0]}{texture[1]}"),
                                 os.path.join(parent_folder, f"{character_name}Mod",f"{current_name}{current_object}{texture[0]}{texture[1]}"))
-                    ib_override_ini += f"ps-t{j} = Resource{current_name}{current_object}{texture[0]}\n\n"
+                    ib_override_ini += f"this = Resource{current_name}{current_object}{texture[0]}\n\n"
                     tex_res_ini += f"[Resource{current_name}{current_object}{texture[0]}]\nfilename = {current_name}{current_object}{texture[0]}{texture[1]}\n\n"
                 else:
                     for j, texture in enumerate(texture_hashes):
@@ -1881,7 +1885,7 @@ def generate_mod_folder(path, character_name, no_ramps, delete_intermediate, cre
                         ib_override_ini += f"[TextureOverride{current_name}{current_object}{texture[0]}]\nhash = {texture[2]}\n"
                         shutil.copy(os.path.join(path, f"{current_name}{current_object}{texture[0]}{texture[1]}"),
                                     os.path.join(parent_folder, f"{character_name}Mod",f"{current_name}{current_object}{texture[0]}{texture[1]}"))
-                        ib_override_ini += f"ps-t{j} = Resource{current_name}{current_object}{texture[0]}\n\n"
+                        ib_override_ini += f"this = Resource{current_name}{current_object}{texture[0]}\n\n"
                         tex_res_ini += f"[Resource{current_name}{current_object}{texture[0]}]\nfilename = {current_name}{current_object}{texture[0]}{texture[1]}\n\n"
                 ib_override_ini += "\n"
 
